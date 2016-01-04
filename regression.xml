@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Checkouts">
+
+	<test name="ASR CheckOut">
+		<!-- To Run the Entire package -->
+		<packages>
+
+			<package name="com.ftr.app" />
+			<!-- To Run The Classes under the package -->
+			<classes>
+
+
+				<class name="com.ftr.app.Setup_Teardown" />
+				<class name="com.ftr.app.ASR_TA_Checkout" />
+
+
+			</classes>
+
+		</packages>
+
+	</test>
+
+</suite>

@@ -1,0 +1,10 @@
+/target/
+/Reports/
+/test-output/
+/RemoteSystemsTempFiles/
+
+# Eclipse Core
+.project
+
+Eclipse Java Development Tools
+.classpath

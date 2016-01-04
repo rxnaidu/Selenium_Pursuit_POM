@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ftr.app</groupId>
+	<artifactId>Selenium_Pursuit_POM</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>Selenium_Pursuit</name>
+	<url>http://maven.apache.org</url>
+
+	<!-- To prevent "[WARNING] Using platform encoding (Cp1252 actually) to 
+		copy filtered resources, i.e. build is platform dependent!" -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- Profiles for executing individual testNG xml files -->
+	<profiles>
+
+		<profile>
+
+			<id>SanityTest</id>
+
+			<build>
+
+				<plugins>
+					<!-- To Execute the TestNG xml thru Maven surefire-plugin is required -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>checkout.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>RegressionTest</id>
+
+			<build>
+
+				<plugins>
+					<!-- To Execute the TestNG xml thru Maven surefire-plugin is required -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>2.19</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>regression.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+
+				</plugins>
+
+				<!-- <pluginManagement> <plugins> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+					<artifactId>maven-compiler-plugin</artifactId> <version>3.1</version> <configuration> 
+					<source>1.7</source> <target>1.7</target> </configuration> </plugin> </plugins> 
+					</pluginManagement> -->
+
+			</build>
+
+		</profile>
+	</profiles>
+
+	<!-- These are the dependencies -->
+
+	<dependencies>
+
+		<!-- Junit Dependency -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Selenium Dependency -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.48.2</version>
+		</dependency>
+
+		<!-- TestNG Dependency -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.8</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Log4J Dependency -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.5</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.jms</groupId>
+					<artifactId>jms</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Apache POI Dependency -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.10-FINAL</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+			<!-- <exclusions> <exclusion> <artifactId>xml-apis</artifactId> <groupId>xml-apis</groupId> 
+				</exclusion> </exclusions> -->
+		</dependency>
+		
+		
+
+
+	</dependencies>
+</project>
