@@ -40,6 +40,8 @@ public class ASR_TA_Checkout extends Setup_Teardown {
 		
 		
 		
+		REMEDY_Login rl = new REMEDY_Login(driver);
+		
 				
 	}
 	
